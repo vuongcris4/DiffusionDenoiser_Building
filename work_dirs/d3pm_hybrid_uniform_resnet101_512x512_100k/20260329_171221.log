@@ -129,3 +129,253 @@ unexpected key in source state_dict: fc.weight, fc.bias
 2026-03-29 17:18:38 - diffusion_denoiser - INFO - Iter [700/100000]  lr: 7.00e-06, loss_ce: 0.1146, loss_kl: 0.0019, loss_total: 0.0030, time: 0.675, data_time: 0.000, memory: 5391, eta: 18:37:06
 2026-03-29 17:19:46 - diffusion_denoiser - INFO - Iter [800/100000]  lr: 8.00e-06, loss_ce: 0.1391, loss_kl: 0.0004, loss_total: 0.0017, time: 0.682, data_time: 0.000, memory: 5391, eta: 18:47:17
 2026-03-29 17:20:55 - diffusion_denoiser - INFO - Iter [900/100000]  lr: 9.00e-06, loss_ce: 0.3358, loss_kl: 0.0002, loss_total: 0.0035, time: 0.679, data_time: 0.000, memory: 5391, eta: 18:41:03
+2026-03-29 17:22:04 - diffusion_denoiser - INFO - Iter [1000/100000]  lr: 1.00e-05, loss_ce: 0.2156, loss_kl: 0.0008, loss_total: 0.0030, time: 0.687, data_time: 0.000, memory: 5391, eta: 18:54:00
+2026-03-29 17:22:04 - diffusion_denoiser - INFO - --- Validation @ iter 1000 ---
+2026-03-29 17:28:40 - diffusion_denoiser - INFO - mIoU: 0.3777 | best: 0.3777 | eval_time: 396.1s [NEW BEST]
+2026-03-29 17:28:40 - diffusion_denoiser - INFO - Per-class IoU: [0.5204, 0.2349]
+2026-03-29 17:29:49 - diffusion_denoiser - INFO - Iter [1100/100000]  lr: 1.10e-05, loss_ce: 0.2897, loss_kl: 0.0005, loss_total: 0.0034, time: 0.688, data_time: 0.000, memory: 5741, eta: 18:54:17
+2026-03-29 17:30:58 - diffusion_denoiser - INFO - Iter [1200/100000]  lr: 1.20e-05, loss_ce: 0.0536, loss_kl: 0.0001, loss_total: 0.0007, time: 0.684, data_time: 0.000, memory: 5741, eta: 18:47:06
+2026-03-29 17:32:06 - diffusion_denoiser - INFO - Iter [1300/100000]  lr: 1.30e-05, loss_ce: 0.0572, loss_kl: 0.0004, loss_total: 0.0009, time: 0.686, data_time: 0.000, memory: 5741, eta: 18:48:27
+2026-03-29 17:33:14 - diffusion_denoiser - INFO - Iter [1400/100000]  lr: 1.40e-05, loss_ce: 0.2202, loss_kl: 0.0016, loss_total: 0.0038, time: 0.682, data_time: 0.000, memory: 5741, eta: 18:40:36
+2026-03-29 17:34:23 - diffusion_denoiser - INFO - Iter [1500/100000]  lr: 1.50e-05, loss_ce: 0.0356, loss_kl: 0.0005, loss_total: 0.0008, time: 0.684, data_time: 0.000, memory: 5741, eta: 18:42:55
+2026-03-29 17:35:31 - diffusion_denoiser - INFO - Iter [1600/100000]  lr: 1.60e-05, loss_ce: 0.4453, loss_kl: 0.0002, loss_total: 0.0046, time: 0.691, data_time: 0.000, memory: 5741, eta: 18:53:58
+2026-03-29 17:36:40 - diffusion_denoiser - INFO - Iter [1700/100000]  lr: 1.70e-05, loss_ce: 0.3756, loss_kl: 0.0004, loss_total: 0.0042, time: 0.689, data_time: 0.000, memory: 5741, eta: 18:48:33
+2026-03-29 17:37:49 - diffusion_denoiser - INFO - Iter [1800/100000]  lr: 1.80e-05, loss_ce: 1.0154, loss_kl: 0.0000, loss_total: 0.0102, time: 0.772, data_time: 0.002, memory: 5741, eta: 21:02:57
+2026-03-29 17:38:57 - diffusion_denoiser - INFO - Iter [1900/100000]  lr: 1.90e-05, loss_ce: 0.0294, loss_kl: 0.0003, loss_total: 0.0006, time: 0.688, data_time: 0.000, memory: 5741, eta: 18:45:19
+2026-03-29 17:40:05 - diffusion_denoiser - INFO - Iter [2000/100000]  lr: 2.00e-05, loss_ce: 0.0345, loss_kl: 0.0004, loss_total: 0.0007, time: 0.690, data_time: 0.000, memory: 5741, eta: 18:46:17
+2026-03-29 17:40:05 - diffusion_denoiser - INFO - --- Validation @ iter 2000 ---
+2026-03-29 17:46:48 - diffusion_denoiser - INFO - mIoU: 0.5864 | best: 0.5864 | eval_time: 397.5s [NEW BEST]
+2026-03-29 17:46:48 - diffusion_denoiser - INFO - Per-class IoU: [0.7667, 0.406 ]
+2026-03-29 17:47:57 - diffusion_denoiser - INFO - Iter [2100/100000]  lr: 2.10e-05, loss_ce: 0.0463, loss_kl: 0.0005, loss_total: 0.0010, time: 0.685, data_time: 0.000, memory: 5742, eta: 18:37:11
+2026-03-29 17:49:01 - diffusion_denoiser - INFO - Iter [2200/100000]  lr: 2.20e-05, loss_ce: 0.0528, loss_kl: 0.0007, loss_total: 0.0012, time: 0.671, data_time: 0.000, memory: 5742, eta: 18:14:21
+2026-03-29 17:50:09 - diffusion_denoiser - INFO - Iter [2300/100000]  lr: 2.30e-05, loss_ce: 0.3886, loss_kl: 0.0000, loss_total: 0.0039, time: 0.678, data_time: 0.000, memory: 5742, eta: 18:24:41
+2026-03-29 17:51:18 - diffusion_denoiser - INFO - Iter [2400/100000]  lr: 2.40e-05, loss_ce: 0.0683, loss_kl: 0.0000, loss_total: 0.0007, time: 0.689, data_time: 0.000, memory: 5742, eta: 18:40:03
+2026-03-29 17:52:26 - diffusion_denoiser - INFO - Iter [2500/100000]  lr: 2.50e-05, loss_ce: 0.0229, loss_kl: 0.0001, loss_total: 0.0003, time: 0.693, data_time: 0.000, memory: 5742, eta: 18:46:17
+2026-03-29 17:53:35 - diffusion_denoiser - INFO - Iter [2600/100000]  lr: 2.60e-05, loss_ce: 0.0180, loss_kl: 0.0002, loss_total: 0.0004, time: 0.687, data_time: 0.000, memory: 5742, eta: 18:35:34
+2026-03-29 17:54:43 - diffusion_denoiser - INFO - Iter [2700/100000]  lr: 2.70e-05, loss_ce: 0.0104, loss_kl: 0.0000, loss_total: 0.0001, time: 0.678, data_time: 0.000, memory: 5742, eta: 18:19:52
+2026-03-29 17:55:52 - diffusion_denoiser - INFO - Iter [2800/100000]  lr: 2.80e-05, loss_ce: 0.0276, loss_kl: 0.0005, loss_total: 0.0008, time: 0.684, data_time: 0.000, memory: 5742, eta: 18:28:03
+2026-03-29 17:57:01 - diffusion_denoiser - INFO - Iter [2900/100000]  lr: 2.90e-05, loss_ce: 0.0101, loss_kl: 0.0001, loss_total: 0.0002, time: 0.716, data_time: 0.000, memory: 5742, eta: 19:19:15
+2026-03-29 17:58:09 - diffusion_denoiser - INFO - Iter [3000/100000]  lr: 3.00e-05, loss_ce: 0.0065, loss_kl: 0.0000, loss_total: 0.0001, time: 0.695, data_time: 0.000, memory: 5742, eta: 18:42:55
+2026-03-29 17:58:09 - diffusion_denoiser - INFO - --- Validation @ iter 3000 ---
+2026-03-29 18:04:52 - diffusion_denoiser - INFO - mIoU: 0.7398 | best: 0.7398 | eval_time: 397.2s [NEW BEST]
+2026-03-29 18:04:52 - diffusion_denoiser - INFO - Per-class IoU: [0.8858, 0.5938]
+2026-03-29 18:05:55 - diffusion_denoiser - INFO - Iter [3100/100000]  lr: 3.10e-05, loss_ce: 0.0064, loss_kl: 0.0001, loss_total: 0.0002, time: 0.678, data_time: 0.000, memory: 5749, eta: 18:15:09
+2026-03-29 18:07:04 - diffusion_denoiser - INFO - Iter [3200/100000]  lr: 3.20e-05, loss_ce: 0.0525, loss_kl: 0.0004, loss_total: 0.0009, time: 0.686, data_time: 0.000, memory: 5749, eta: 18:26:15
+2026-03-29 18:08:12 - diffusion_denoiser - INFO - Iter [3300/100000]  lr: 3.30e-05, loss_ce: 0.0456, loss_kl: 0.0000, loss_total: 0.0005, time: 0.678, data_time: 0.000, memory: 5749, eta: 18:12:50
+2026-03-29 18:09:21 - diffusion_denoiser - INFO - Iter [3400/100000]  lr: 3.40e-05, loss_ce: 0.1035, loss_kl: 0.0003, loss_total: 0.0014, time: 0.694, data_time: 0.000, memory: 5749, eta: 18:37:26
+2026-03-29 18:10:29 - diffusion_denoiser - INFO - Iter [3500/100000]  lr: 3.50e-05, loss_ce: 0.0058, loss_kl: 0.0000, loss_total: 0.0001, time: 0.685, data_time: 0.000, memory: 5749, eta: 18:22:07
+2026-03-29 18:11:38 - diffusion_denoiser - INFO - Iter [3600/100000]  lr: 3.60e-05, loss_ce: 0.0126, loss_kl: 0.0001, loss_total: 0.0002, time: 0.683, data_time: 0.000, memory: 5749, eta: 18:17:54
+2026-03-29 18:12:46 - diffusion_denoiser - INFO - Iter [3700/100000]  lr: 3.70e-05, loss_ce: 0.0071, loss_kl: 0.0001, loss_total: 0.0002, time: 0.680, data_time: 0.000, memory: 5749, eta: 18:11:55
+2026-03-29 18:13:55 - diffusion_denoiser - INFO - Iter [3800/100000]  lr: 3.80e-05, loss_ce: 0.1156, loss_kl: 0.0003, loss_total: 0.0015, time: 0.691, data_time: 0.000, memory: 5749, eta: 18:27:33
+2026-03-29 18:15:04 - diffusion_denoiser - INFO - Iter [3900/100000]  lr: 3.90e-05, loss_ce: 0.0032, loss_kl: 0.0000, loss_total: 0.0000, time: 0.711, data_time: 0.000, memory: 5749, eta: 18:58:50
+2026-03-29 18:16:13 - diffusion_denoiser - INFO - Iter [4000/100000]  lr: 4.00e-05, loss_ce: 0.0151, loss_kl: 0.0003, loss_total: 0.0005, time: 0.685, data_time: 0.000, memory: 5749, eta: 18:15:30
+2026-03-29 18:16:13 - diffusion_denoiser - INFO - --- Validation @ iter 4000 ---
+2026-03-29 18:22:58 - diffusion_denoiser - INFO - mIoU: 0.7892 | best: 0.7892 | eval_time: 396.6s [NEW BEST]
+2026-03-29 18:22:58 - diffusion_denoiser - INFO - Per-class IoU: [0.9137, 0.6647]
+2026-03-29 18:24:06 - diffusion_denoiser - INFO - Iter [4100/100000]  lr: 4.10e-05, loss_ce: 0.0605, loss_kl: 0.0003, loss_total: 0.0009, time: 0.682, data_time: 0.000, memory: 5749, eta: 18:09:26
+2026-03-29 18:25:15 - diffusion_denoiser - INFO - Iter [4200/100000]  lr: 4.20e-05, loss_ce: 0.0272, loss_kl: 0.0006, loss_total: 0.0009, time: 0.676, data_time: 0.000, memory: 5749, eta: 17:58:49
+2026-03-29 18:26:23 - diffusion_denoiser - INFO - Iter [4300/100000]  lr: 4.30e-05, loss_ce: 0.0480, loss_kl: 0.0001, loss_total: 0.0006, time: 0.686, data_time: 0.000, memory: 5749, eta: 18:13:48
+2026-03-29 18:27:32 - diffusion_denoiser - INFO - Iter [4400/100000]  lr: 4.40e-05, loss_ce: 0.1346, loss_kl: 0.0003, loss_total: 0.0017, time: 0.688, data_time: 0.000, memory: 5749, eta: 18:15:26
+2026-03-29 18:28:41 - diffusion_denoiser - INFO - Iter [4500/100000]  lr: 4.50e-05, loss_ce: 0.2046, loss_kl: 0.0013, loss_total: 0.0034, time: 0.679, data_time: 0.000, memory: 5749, eta: 18:00:49
+2026-03-29 18:29:49 - diffusion_denoiser - INFO - Iter [4600/100000]  lr: 4.60e-05, loss_ce: 0.0228, loss_kl: 0.0005, loss_total: 0.0007, time: 0.679, data_time: 0.000, memory: 5749, eta: 17:59:43
+2026-03-29 18:30:58 - diffusion_denoiser - INFO - Iter [4700/100000]  lr: 4.70e-05, loss_ce: 0.0087, loss_kl: 0.0002, loss_total: 0.0003, time: 0.685, data_time: 0.000, memory: 5749, eta: 18:07:24
+2026-03-29 18:32:06 - diffusion_denoiser - INFO - Iter [4800/100000]  lr: 4.80e-05, loss_ce: 0.0047, loss_kl: 0.0001, loss_total: 0.0001, time: 0.682, data_time: 0.000, memory: 5749, eta: 18:02:29
+2026-03-29 18:33:15 - diffusion_denoiser - INFO - Iter [4900/100000]  lr: 4.90e-05, loss_ce: 0.2672, loss_kl: 0.0002, loss_total: 0.0029, time: 0.679, data_time: 0.000, memory: 5749, eta: 17:55:42
+2026-03-29 18:34:22 - diffusion_denoiser - INFO - Iter [5000/100000]  lr: 5.00e-05, loss_ce: 0.0098, loss_kl: 0.0003, loss_total: 0.0004, time: 0.714, data_time: 0.000, memory: 5749, eta: 18:50:54
+2026-03-29 18:34:25 - diffusion_denoiser - INFO - Saving checkpoint at 5000 iterations: work_dirs/d3pm_hybrid_uniform_resnet101_512x512_100k/iter_5000.pth
+2026-03-29 18:34:25 - diffusion_denoiser - INFO - --- Validation @ iter 5000 ---
+2026-03-29 18:41:03 - diffusion_denoiser - INFO - mIoU: 0.8023 | best: 0.8023 | eval_time: 392.4s [NEW BEST]
+2026-03-29 18:41:03 - diffusion_denoiser - INFO - Per-class IoU: [0.92  , 0.6845]
+2026-03-29 18:42:11 - diffusion_denoiser - INFO - Iter [5100/100000]  lr: 5.00e-05, loss_ce: 0.0014, loss_kl: 0.0000, loss_total: 0.0000, time: 0.680, data_time: 0.000, memory: 5749, eta: 17:55:34
+2026-03-29 18:43:19 - diffusion_denoiser - INFO - Iter [5200/100000]  lr: 5.00e-05, loss_ce: 0.0016, loss_kl: 0.0000, loss_total: 0.0000, time: 0.679, data_time: 0.000, memory: 5749, eta: 17:53:19
+2026-03-29 18:44:28 - diffusion_denoiser - INFO - Iter [5300/100000]  lr: 5.00e-05, loss_ce: 0.2865, loss_kl: 0.0001, loss_total: 0.0029, time: 0.687, data_time: 0.000, memory: 5749, eta: 18:03:37
+2026-03-29 18:45:36 - diffusion_denoiser - INFO - Iter [5400/100000]  lr: 5.00e-05, loss_ce: 0.0012, loss_kl: 0.0000, loss_total: 0.0000, time: 0.687, data_time: 0.000, memory: 5749, eta: 18:03:36
+2026-03-29 18:46:45 - diffusion_denoiser - INFO - Iter [5500/100000]  lr: 5.00e-05, loss_ce: 0.0227, loss_kl: 0.0001, loss_total: 0.0003, time: 0.686, data_time: 0.000, memory: 5749, eta: 18:00:35
+2026-03-29 18:47:53 - diffusion_denoiser - INFO - Iter [5600/100000]  lr: 5.00e-05, loss_ce: 0.0055, loss_kl: 0.0000, loss_total: 0.0001, time: 0.688, data_time: 0.000, memory: 5749, eta: 18:01:50
+2026-03-29 18:49:02 - diffusion_denoiser - INFO - Iter [5700/100000]  lr: 5.00e-05, loss_ce: 0.8756, loss_kl: 0.0005, loss_total: 0.0092, time: 0.689, data_time: 0.000, memory: 5749, eta: 18:02:22
+2026-03-29 18:50:10 - diffusion_denoiser - INFO - Iter [5800/100000]  lr: 5.00e-05, loss_ce: 0.1069, loss_kl: 0.0004, loss_total: 0.0014, time: 0.688, data_time: 0.000, memory: 5749, eta: 18:00:01
+2026-03-29 18:51:19 - diffusion_denoiser - INFO - Iter [5900/100000]  lr: 5.00e-05, loss_ce: 0.0008, loss_kl: 0.0000, loss_total: 0.0000, time: 0.680, data_time: 0.000, memory: 5749, eta: 17:46:34
+2026-03-29 18:52:28 - diffusion_denoiser - INFO - Iter [6000/100000]  lr: 5.00e-05, loss_ce: 0.0033, loss_kl: 0.0001, loss_total: 0.0001, time: 0.687, data_time: 0.000, memory: 5749, eta: 17:56:59
+2026-03-29 18:52:28 - diffusion_denoiser - INFO - --- Validation @ iter 6000 ---
+2026-03-29 18:59:05 - diffusion_denoiser - INFO - mIoU: 0.8063 | best: 0.8063 | eval_time: 392.0s [NEW BEST]
+2026-03-29 18:59:05 - diffusion_denoiser - INFO - Per-class IoU: [0.9218, 0.6908]
+2026-03-29 19:00:14 - diffusion_denoiser - INFO - Iter [6100/100000]  lr: 5.00e-05, loss_ce: 0.1431, loss_kl: 0.0001, loss_total: 0.0016, time: 0.685, data_time: 0.000, memory: 5749, eta: 17:52:28
+2026-03-29 19:01:22 - diffusion_denoiser - INFO - Iter [6200/100000]  lr: 5.00e-05, loss_ce: 0.0008, loss_kl: 0.0000, loss_total: 0.0000, time: 0.684, data_time: 0.000, memory: 5749, eta: 17:49:00
+2026-03-29 19:02:31 - diffusion_denoiser - INFO - Iter [6300/100000]  lr: 5.00e-05, loss_ce: 0.0203, loss_kl: 0.0004, loss_total: 0.0006, time: 0.689, data_time: 0.000, memory: 5749, eta: 17:55:59
+2026-03-29 19:03:39 - diffusion_denoiser - INFO - Iter [6400/100000]  lr: 5.00e-05, loss_ce: 0.0371, loss_kl: 0.0001, loss_total: 0.0005, time: 0.685, data_time: 0.000, memory: 5749, eta: 17:49:12
+2026-03-29 19:04:48 - diffusion_denoiser - INFO - Iter [6500/100000]  lr: 5.00e-05, loss_ce: 0.0097, loss_kl: 0.0002, loss_total: 0.0003, time: 0.687, data_time: 0.000, memory: 5749, eta: 17:49:48
+2026-03-29 19:05:56 - diffusion_denoiser - INFO - Iter [6600/100000]  lr: 5.00e-05, loss_ce: 0.0162, loss_kl: 0.0002, loss_total: 0.0003, time: 0.688, data_time: 0.000, memory: 5749, eta: 17:51:42
+2026-03-29 19:07:05 - diffusion_denoiser - INFO - Iter [6700/100000]  lr: 5.00e-05, loss_ce: 0.0717, loss_kl: 0.0003, loss_total: 0.0011, time: 0.690, data_time: 0.000, memory: 5749, eta: 17:53:27
+2026-03-29 19:08:13 - diffusion_denoiser - INFO - Iter [6800/100000]  lr: 5.00e-05, loss_ce: 0.4226, loss_kl: 0.0000, loss_total: 0.0042, time: 0.692, data_time: 0.000, memory: 5749, eta: 17:54:45
+2026-03-29 19:09:22 - diffusion_denoiser - INFO - Iter [6900/100000]  lr: 5.00e-05, loss_ce: 0.5137, loss_kl: 0.0000, loss_total: 0.0052, time: 0.685, data_time: 0.000, memory: 5749, eta: 17:42:54
+2026-03-29 19:10:31 - diffusion_denoiser - INFO - Iter [7000/100000]  lr: 4.99e-05, loss_ce: 0.0864, loss_kl: 0.0001, loss_total: 0.0010, time: 0.693, data_time: 0.000, memory: 5749, eta: 17:54:31
+2026-03-29 19:10:31 - diffusion_denoiser - INFO - --- Validation @ iter 7000 ---
+2026-03-29 19:17:08 - diffusion_denoiser - INFO - mIoU: 0.8077 | best: 0.8077 | eval_time: 392.0s [NEW BEST]
+2026-03-29 19:17:08 - diffusion_denoiser - INFO - Per-class IoU: [0.9225, 0.6929]
+2026-03-29 19:18:17 - diffusion_denoiser - INFO - Iter [7100/100000]  lr: 4.99e-05, loss_ce: 0.1004, loss_kl: 0.0004, loss_total: 0.0014, time: 0.678, data_time: 0.000, memory: 5751, eta: 17:30:17
+2026-03-29 19:19:25 - diffusion_denoiser - INFO - Iter [7200/100000]  lr: 4.99e-05, loss_ce: 0.6211, loss_kl: 0.0001, loss_total: 0.0063, time: 0.685, data_time: 0.000, memory: 5751, eta: 17:39:42
+2026-03-29 19:20:34 - diffusion_denoiser - INFO - Iter [7300/100000]  lr: 4.99e-05, loss_ce: 0.0086, loss_kl: 0.0003, loss_total: 0.0004, time: 0.674, data_time: 0.000, memory: 5751, eta: 17:21:53
+2026-03-29 19:21:42 - diffusion_denoiser - INFO - Iter [7400/100000]  lr: 4.99e-05, loss_ce: 0.0045, loss_kl: 0.0002, loss_total: 0.0002, time: 0.683, data_time: 0.000, memory: 5751, eta: 17:34:46
+2026-03-29 19:22:51 - diffusion_denoiser - INFO - Iter [7500/100000]  lr: 4.99e-05, loss_ce: 0.0087, loss_kl: 0.0003, loss_total: 0.0003, time: 0.691, data_time: 0.000, memory: 5751, eta: 17:45:16
+2026-03-29 19:23:59 - diffusion_denoiser - INFO - Iter [7600/100000]  lr: 4.99e-05, loss_ce: 0.0693, loss_kl: 0.0000, loss_total: 0.0007, time: 0.676, data_time: 0.000, memory: 5751, eta: 17:20:36
+2026-03-29 19:25:07 - diffusion_denoiser - INFO - Iter [7700/100000]  lr: 4.99e-05, loss_ce: 0.0161, loss_kl: 0.0004, loss_total: 0.0006, time: 0.694, data_time: 0.000, memory: 5751, eta: 17:47:40
+2026-03-29 19:26:16 - diffusion_denoiser - INFO - Iter [7800/100000]  lr: 4.99e-05, loss_ce: 0.0018, loss_kl: 0.0000, loss_total: 0.0000, time: 0.685, data_time: 0.000, memory: 5751, eta: 17:32:49
+2026-03-29 19:27:24 - diffusion_denoiser - INFO - Iter [7900/100000]  lr: 4.99e-05, loss_ce: 0.1326, loss_kl: 0.0002, loss_total: 0.0015, time: 0.686, data_time: 0.000, memory: 5751, eta: 17:32:37
+2026-03-29 19:28:33 - diffusion_denoiser - INFO - Iter [8000/100000]  lr: 4.99e-05, loss_ce: 0.0009, loss_kl: 0.0000, loss_total: 0.0000, time: 0.687, data_time: 0.000, memory: 5751, eta: 17:33:34
+2026-03-29 19:28:33 - diffusion_denoiser - INFO - --- Validation @ iter 8000 ---
+2026-03-29 19:35:10 - diffusion_denoiser - INFO - mIoU: 0.8079 | best: 0.8079 | eval_time: 391.8s [NEW BEST]
+2026-03-29 19:35:10 - diffusion_denoiser - INFO - Per-class IoU: [0.9227, 0.6931]
+2026-03-29 19:36:19 - diffusion_denoiser - INFO - Iter [8100/100000]  lr: 4.99e-05, loss_ce: 0.0433, loss_kl: 0.0013, loss_total: 0.0018, time: 0.700, data_time: 0.000, memory: 5751, eta: 17:52:04
+2026-03-29 19:37:27 - diffusion_denoiser - INFO - Iter [8200/100000]  lr: 4.99e-05, loss_ce: 0.0181, loss_kl: 0.0005, loss_total: 0.0006, time: 0.686, data_time: 0.000, memory: 5751, eta: 17:29:06
+2026-03-29 19:38:35 - diffusion_denoiser - INFO - Iter [8300/100000]  lr: 4.99e-05, loss_ce: 0.0003, loss_kl: 0.0000, loss_total: 0.0000, time: 0.683, data_time: 0.000, memory: 5751, eta: 17:24:18
+2026-03-29 19:39:44 - diffusion_denoiser - INFO - Iter [8400/100000]  lr: 4.98e-05, loss_ce: 0.3489, loss_kl: 0.0000, loss_total: 0.0035, time: 0.687, data_time: 0.000, memory: 5751, eta: 17:29:09
+2026-03-29 19:40:52 - diffusion_denoiser - INFO - Iter [8500/100000]  lr: 4.98e-05, loss_ce: 0.0006, loss_kl: 0.0000, loss_total: 0.0000, time: 0.682, data_time: 0.000, memory: 5751, eta: 17:19:49
+2026-03-29 19:42:01 - diffusion_denoiser - INFO - Iter [8600/100000]  lr: 4.98e-05, loss_ce: 0.3926, loss_kl: 0.0002, loss_total: 0.0041, time: 0.684, data_time: 0.000, memory: 5751, eta: 17:21:27
+2026-03-29 19:43:10 - diffusion_denoiser - INFO - Iter [8700/100000]  lr: 4.98e-05, loss_ce: 0.1920, loss_kl: 0.0000, loss_total: 0.0019, time: 0.685, data_time: 0.000, memory: 5751, eta: 17:22:57
+2026-03-29 19:44:19 - diffusion_denoiser - INFO - Iter [8800/100000]  lr: 4.98e-05, loss_ce: 0.4903, loss_kl: 0.0000, loss_total: 0.0049, time: 0.690, data_time: 0.000, memory: 5751, eta: 17:28:56
+2026-03-29 19:45:27 - diffusion_denoiser - INFO - Iter [8900/100000]  lr: 4.98e-05, loss_ce: 0.0056, loss_kl: 0.0002, loss_total: 0.0002, time: 0.690, data_time: 0.000, memory: 5751, eta: 17:27:53
+2026-03-29 19:46:36 - diffusion_denoiser - INFO - Iter [9000/100000]  lr: 4.98e-05, loss_ce: 0.0079, loss_kl: 0.0000, loss_total: 0.0001, time: 0.688, data_time: 0.000, memory: 5751, eta: 17:23:10
+2026-03-29 19:46:36 - diffusion_denoiser - INFO - --- Validation @ iter 9000 ---
+2026-03-29 19:53:08 - diffusion_denoiser - INFO - mIoU: 0.8079 | best: 0.8079 | eval_time: 391.6s
+2026-03-29 19:53:08 - diffusion_denoiser - INFO - Per-class IoU: [0.9228, 0.6929]
+2026-03-29 19:54:16 - diffusion_denoiser - INFO - Iter [9100/100000]  lr: 4.98e-05, loss_ce: 0.0269, loss_kl: 0.0003, loss_total: 0.0006, time: 0.689, data_time: 0.000, memory: 5751, eta: 17:23:46
+2026-03-29 19:55:25 - diffusion_denoiser - INFO - Iter [9200/100000]  lr: 4.98e-05, loss_ce: 0.1470, loss_kl: 0.0007, loss_total: 0.0021, time: 0.675, data_time: 0.000, memory: 5751, eta: 17:01:17
+2026-03-29 19:56:34 - diffusion_denoiser - INFO - Iter [9300/100000]  lr: 4.98e-05, loss_ce: 0.0294, loss_kl: 0.0006, loss_total: 0.0009, time: 0.690, data_time: 0.000, memory: 5751, eta: 17:23:30
+2026-03-29 19:57:42 - diffusion_denoiser - INFO - Iter [9400/100000]  lr: 4.97e-05, loss_ce: 0.0155, loss_kl: 0.0005, loss_total: 0.0006, time: 0.709, data_time: 0.000, memory: 5751, eta: 17:51:12
+2026-03-29 19:58:51 - diffusion_denoiser - INFO - Iter [9500/100000]  lr: 4.97e-05, loss_ce: 0.0099, loss_kl: 0.0004, loss_total: 0.0005, time: 0.687, data_time: 0.000, memory: 5751, eta: 17:16:58
+2026-03-29 19:59:58 - diffusion_denoiser - INFO - Iter [9600/100000]  lr: 4.97e-05, loss_ce: 0.0027, loss_kl: 0.0001, loss_total: 0.0001, time: 0.684, data_time: 0.000, memory: 5751, eta: 17:10:17
+2026-03-29 20:01:07 - diffusion_denoiser - INFO - Iter [9700/100000]  lr: 4.97e-05, loss_ce: 0.0025, loss_kl: 0.0000, loss_total: 0.0001, time: 0.694, data_time: 0.000, memory: 5751, eta: 17:24:23
+2026-03-29 20:02:16 - diffusion_denoiser - INFO - Iter [9800/100000]  lr: 4.97e-05, loss_ce: 0.2242, loss_kl: 0.0000, loss_total: 0.0022, time: 0.682, data_time: 0.000, memory: 5751, eta: 17:04:51
+2026-03-29 20:03:24 - diffusion_denoiser - INFO - Iter [9900/100000]  lr: 4.97e-05, loss_ce: 0.0171, loss_kl: 0.0005, loss_total: 0.0007, time: 0.689, data_time: 0.000, memory: 5751, eta: 17:14:46
+2026-03-29 20:04:33 - diffusion_denoiser - INFO - Iter [10000/100000]  lr: 4.97e-05, loss_ce: 0.0528, loss_kl: 0.0001, loss_total: 0.0006, time: 0.687, data_time: 0.000, memory: 5751, eta: 17:09:59
+2026-03-29 20:04:35 - diffusion_denoiser - INFO - Saving checkpoint at 10000 iterations: work_dirs/d3pm_hybrid_uniform_resnet101_512x512_100k/iter_10000.pth
+2026-03-29 20:04:35 - diffusion_denoiser - INFO - --- Validation @ iter 10000 ---
+2026-03-29 20:11:07 - diffusion_denoiser - INFO - mIoU: 0.8078 | best: 0.8079 | eval_time: 392.0s
+2026-03-29 20:11:07 - diffusion_denoiser - INFO - Per-class IoU: [0.9229, 0.6927]
+2026-03-29 20:12:16 - diffusion_denoiser - INFO - Iter [10100/100000]  lr: 4.97e-05, loss_ce: 0.0205, loss_kl: 0.0003, loss_total: 0.0005, time: 0.675, data_time: 0.000, memory: 5751, eta: 16:51:58
+2026-03-29 20:13:24 - diffusion_denoiser - INFO - Iter [10200/100000]  lr: 4.96e-05, loss_ce: 0.0091, loss_kl: 0.0003, loss_total: 0.0004, time: 0.684, data_time: 0.000, memory: 5751, eta: 17:03:40
+2026-03-29 20:14:33 - diffusion_denoiser - INFO - Iter [10300/100000]  lr: 4.96e-05, loss_ce: 0.1791, loss_kl: 0.0002, loss_total: 0.0020, time: 0.686, data_time: 0.000, memory: 5751, eta: 17:05:43
+2026-03-29 20:15:42 - diffusion_denoiser - INFO - Iter [10400/100000]  lr: 4.96e-05, loss_ce: 0.4165, loss_kl: 0.0000, loss_total: 0.0042, time: 0.680, data_time: 0.000, memory: 5751, eta: 16:54:50
+2026-03-29 20:16:50 - diffusion_denoiser - INFO - Iter [10500/100000]  lr: 4.96e-05, loss_ce: 0.0068, loss_kl: 0.0001, loss_total: 0.0002, time: 0.685, data_time: 0.000, memory: 5751, eta: 17:02:11
+2026-03-29 20:17:59 - diffusion_denoiser - INFO - Iter [10600/100000]  lr: 4.96e-05, loss_ce: 0.0309, loss_kl: 0.0003, loss_total: 0.0006, time: 0.696, data_time: 0.000, memory: 5751, eta: 17:16:34
+2026-03-29 20:19:08 - diffusion_denoiser - INFO - Iter [10700/100000]  lr: 4.96e-05, loss_ce: 0.7333, loss_kl: 0.0000, loss_total: 0.0074, time: 0.681, data_time: 0.000, memory: 5751, eta: 16:53:25
+2026-03-29 20:20:16 - diffusion_denoiser - INFO - Iter [10800/100000]  lr: 4.96e-05, loss_ce: 0.0166, loss_kl: 0.0003, loss_total: 0.0005, time: 0.687, data_time: 0.000, memory: 5751, eta: 17:00:54
+2026-03-29 20:21:25 - diffusion_denoiser - INFO - Iter [10900/100000]  lr: 4.95e-05, loss_ce: 0.0061, loss_kl: 0.0002, loss_total: 0.0002, time: 0.683, data_time: 0.000, memory: 5751, eta: 16:54:57
+2026-03-29 20:22:33 - diffusion_denoiser - INFO - Iter [11000/100000]  lr: 4.95e-05, loss_ce: 0.3770, loss_kl: 0.0000, loss_total: 0.0038, time: 0.686, data_time: 0.000, memory: 5751, eta: 16:57:10
+2026-03-29 20:22:33 - diffusion_denoiser - INFO - --- Validation @ iter 11000 ---
+2026-03-29 20:29:05 - diffusion_denoiser - INFO - mIoU: 0.8077 | best: 0.8079 | eval_time: 391.5s
+2026-03-29 20:29:05 - diffusion_denoiser - INFO - Per-class IoU: [0.923 , 0.6924]
+2026-03-29 20:30:13 - diffusion_denoiser - INFO - Iter [11100/100000]  lr: 4.95e-05, loss_ce: 0.0022, loss_kl: 0.0001, loss_total: 0.0001, time: 0.678, data_time: 0.000, memory: 5751, eta: 16:44:06
+2026-03-29 20:31:22 - diffusion_denoiser - INFO - Iter [11200/100000]  lr: 4.95e-05, loss_ce: 0.0002, loss_kl: 0.0000, loss_total: 0.0000, time: 0.684, data_time: 0.000, memory: 5751, eta: 16:52:02
+2026-03-29 20:32:30 - diffusion_denoiser - INFO - Iter [11300/100000]  lr: 4.95e-05, loss_ce: 0.0003, loss_kl: 0.0000, loss_total: 0.0000, time: 0.681, data_time: 0.000, memory: 5751, eta: 16:47:05
+2026-03-29 20:33:39 - diffusion_denoiser - INFO - Iter [11400/100000]  lr: 4.95e-05, loss_ce: 0.0136, loss_kl: 0.0003, loss_total: 0.0004, time: 0.679, data_time: 0.000, memory: 5751, eta: 16:43:21
+2026-03-29 20:34:47 - diffusion_denoiser - INFO - Iter [11500/100000]  lr: 4.94e-05, loss_ce: 0.0220, loss_kl: 0.0004, loss_total: 0.0006, time: 0.682, data_time: 0.000, memory: 5751, eta: 16:45:50
+2026-03-29 20:35:56 - diffusion_denoiser - INFO - Iter [11600/100000]  lr: 4.94e-05, loss_ce: 0.0082, loss_kl: 0.0001, loss_total: 0.0002, time: 0.688, data_time: 0.000, memory: 5751, eta: 16:53:56
+2026-03-29 20:37:05 - diffusion_denoiser - INFO - Iter [11700/100000]  lr: 4.94e-05, loss_ce: 0.0201, loss_kl: 0.0000, loss_total: 0.0002, time: 0.688, data_time: 0.000, memory: 5751, eta: 16:53:03
+2026-03-29 20:38:13 - diffusion_denoiser - INFO - Iter [11800/100000]  lr: 4.94e-05, loss_ce: 0.0152, loss_kl: 0.0005, loss_total: 0.0006, time: 0.687, data_time: 0.000, memory: 5751, eta: 16:49:37
+2026-03-29 20:39:22 - diffusion_denoiser - INFO - Iter [11900/100000]  lr: 4.94e-05, loss_ce: 0.3924, loss_kl: 0.0000, loss_total: 0.0039, time: 0.685, data_time: 0.000, memory: 5751, eta: 16:45:10
+2026-03-29 20:40:30 - diffusion_denoiser - INFO - Iter [12000/100000]  lr: 4.93e-05, loss_ce: 0.0337, loss_kl: 0.0007, loss_total: 0.0011, time: 0.684, data_time: 0.000, memory: 5751, eta: 16:43:51
+2026-03-29 20:40:30 - diffusion_denoiser - INFO - --- Validation @ iter 12000 ---
+2026-03-29 20:47:06 - diffusion_denoiser - INFO - mIoU: 0.8076 | best: 0.8079 | eval_time: 395.8s
+2026-03-29 20:47:06 - diffusion_denoiser - INFO - Per-class IoU: [0.923 , 0.6921]
+2026-03-29 20:48:15 - diffusion_denoiser - INFO - Iter [12100/100000]  lr: 4.93e-05, loss_ce: 0.0575, loss_kl: 0.0003, loss_total: 0.0009, time: 0.682, data_time: 0.000, memory: 5751, eta: 16:39:33
+2026-03-29 20:49:24 - diffusion_denoiser - INFO - Iter [12200/100000]  lr: 4.93e-05, loss_ce: 0.1722, loss_kl: 0.0000, loss_total: 0.0017, time: 0.691, data_time: 0.000, memory: 5751, eta: 16:50:37
+2026-03-29 20:50:32 - diffusion_denoiser - INFO - Iter [12300/100000]  lr: 4.93e-05, loss_ce: 0.0004, loss_kl: 0.0000, loss_total: 0.0000, time: 0.690, data_time: 0.000, memory: 5751, eta: 16:48:39
+2026-03-29 20:51:41 - diffusion_denoiser - INFO - Iter [12400/100000]  lr: 4.93e-05, loss_ce: 0.0007, loss_kl: 0.0000, loss_total: 0.0000, time: 0.690, data_time: 0.000, memory: 5751, eta: 16:47:06
+2026-03-29 20:52:49 - diffusion_denoiser - INFO - Iter [12500/100000]  lr: 4.93e-05, loss_ce: 0.0055, loss_kl: 0.0001, loss_total: 0.0001, time: 0.690, data_time: 0.000, memory: 5751, eta: 16:46:17
+2026-03-29 20:53:58 - diffusion_denoiser - INFO - Iter [12600/100000]  lr: 4.92e-05, loss_ce: 0.0163, loss_kl: 0.0002, loss_total: 0.0004, time: 0.691, data_time: 0.000, memory: 5751, eta: 16:47:00
+2026-03-29 20:55:07 - diffusion_denoiser - INFO - Iter [12700/100000]  lr: 4.92e-05, loss_ce: 0.0024, loss_kl: 0.0001, loss_total: 0.0002, time: 0.681, data_time: 0.000, memory: 5751, eta: 16:30:48
+2026-03-29 20:56:15 - diffusion_denoiser - INFO - Iter [12800/100000]  lr: 4.92e-05, loss_ce: 0.0034, loss_kl: 0.0000, loss_total: 0.0001, time: 0.690, data_time: 0.000, memory: 5751, eta: 16:43:09
+2026-03-29 20:57:24 - diffusion_denoiser - INFO - Iter [12900/100000]  lr: 4.92e-05, loss_ce: 0.0032, loss_kl: 0.0001, loss_total: 0.0001, time: 0.694, data_time: 0.000, memory: 5751, eta: 16:47:04
+2026-03-29 20:58:28 - diffusion_denoiser - INFO - Iter [13000/100000]  lr: 4.91e-05, loss_ce: 0.0008, loss_kl: 0.0000, loss_total: 0.0000, time: 0.682, data_time: 0.000, memory: 5751, eta: 16:28:15
+2026-03-29 20:58:28 - diffusion_denoiser - INFO - --- Validation @ iter 13000 ---
+2026-03-29 21:05:04 - diffusion_denoiser - INFO - mIoU: 0.8075 | best: 0.8079 | eval_time: 395.9s
+2026-03-29 21:05:04 - diffusion_denoiser - INFO - Per-class IoU: [0.923 , 0.6919]
+2026-03-29 21:06:12 - diffusion_denoiser - INFO - Iter [13100/100000]  lr: 4.91e-05, loss_ce: 0.0275, loss_kl: 0.0002, loss_total: 0.0004, time: 0.684, data_time: 0.000, memory: 5751, eta: 16:30:51
+2026-03-29 21:07:20 - diffusion_denoiser - INFO - Iter [13200/100000]  lr: 4.91e-05, loss_ce: 0.0102, loss_kl: 0.0004, loss_total: 0.0005, time: 0.682, data_time: 0.000, memory: 5751, eta: 16:26:01
+2026-03-29 21:08:28 - diffusion_denoiser - INFO - Iter [13300/100000]  lr: 4.91e-05, loss_ce: 0.0036, loss_kl: 0.0001, loss_total: 0.0002, time: 0.683, data_time: 0.000, memory: 5751, eta: 16:27:33
+2026-03-29 21:09:37 - diffusion_denoiser - INFO - Iter [13400/100000]  lr: 4.91e-05, loss_ce: 0.0963, loss_kl: 0.0002, loss_total: 0.0011, time: 0.680, data_time: 0.000, memory: 5751, eta: 16:21:54
+2026-03-29 21:10:46 - diffusion_denoiser - INFO - Iter [13500/100000]  lr: 4.90e-05, loss_ce: 0.0037, loss_kl: 0.0000, loss_total: 0.0000, time: 0.698, data_time: 0.000, memory: 5751, eta: 16:45:50
+2026-03-29 21:11:55 - diffusion_denoiser - INFO - Iter [13600/100000]  lr: 4.90e-05, loss_ce: 0.0026, loss_kl: 0.0000, loss_total: 0.0000, time: 0.690, data_time: 0.002, memory: 5751, eta: 16:33:00
+2026-03-29 21:13:03 - diffusion_denoiser - INFO - Iter [13700/100000]  lr: 4.90e-05, loss_ce: 0.0018, loss_kl: 0.0000, loss_total: 0.0000, time: 0.690, data_time: 0.000, memory: 5751, eta: 16:31:59
+2026-03-29 21:14:12 - diffusion_denoiser - INFO - Iter [13800/100000]  lr: 4.90e-05, loss_ce: 0.1497, loss_kl: 0.0002, loss_total: 0.0017, time: 0.683, data_time: 0.000, memory: 5751, eta: 16:21:48
+2026-03-29 21:15:16 - diffusion_denoiser - INFO - Iter [13900/100000]  lr: 4.89e-05, loss_ce: 0.0069, loss_kl: 0.0000, loss_total: 0.0001, time: 0.686, data_time: 0.000, memory: 5751, eta: 16:24:45
+2026-03-29 21:16:24 - diffusion_denoiser - INFO - Iter [14000/100000]  lr: 4.89e-05, loss_ce: 0.2024, loss_kl: 0.0002, loss_total: 0.0022, time: 0.680, data_time: 0.000, memory: 5751, eta: 16:15:17
+2026-03-29 21:16:24 - diffusion_denoiser - INFO - --- Validation @ iter 14000 ---
+2026-03-29 21:23:00 - diffusion_denoiser - INFO - mIoU: 0.8074 | best: 0.8079 | eval_time: 395.4s
+2026-03-29 21:23:00 - diffusion_denoiser - INFO - Per-class IoU: [0.9231, 0.6917]
+2026-03-29 21:24:08 - diffusion_denoiser - INFO - Iter [14100/100000]  lr: 4.89e-05, loss_ce: 0.0022, loss_kl: 0.0000, loss_total: 0.0000, time: 0.689, data_time: 0.000, memory: 5751, eta: 16:26:57
+2026-03-29 21:25:17 - diffusion_denoiser - INFO - Iter [14200/100000]  lr: 4.89e-05, loss_ce: 0.0010, loss_kl: 0.0000, loss_total: 0.0000, time: 0.684, data_time: 0.000, memory: 5751, eta: 16:18:42
+2026-03-29 21:26:24 - diffusion_denoiser - INFO - Iter [14300/100000]  lr: 4.89e-05, loss_ce: 0.0098, loss_kl: 0.0003, loss_total: 0.0004, time: 0.684, data_time: 0.000, memory: 5751, eta: 16:16:56
+2026-03-29 21:27:33 - diffusion_denoiser - INFO - Iter [14400/100000]  lr: 4.88e-05, loss_ce: 0.0115, loss_kl: 0.0002, loss_total: 0.0004, time: 0.680, data_time: 0.000, memory: 5751, eta: 16:10:04
+2026-03-29 21:28:42 - diffusion_denoiser - INFO - Iter [14500/100000]  lr: 4.88e-05, loss_ce: 0.0321, loss_kl: 0.0003, loss_total: 0.0006, time: 0.681, data_time: 0.000, memory: 5751, eta: 16:11:05
+2026-03-29 21:29:50 - diffusion_denoiser - INFO - Iter [14600/100000]  lr: 4.88e-05, loss_ce: 0.0125, loss_kl: 0.0002, loss_total: 0.0003, time: 0.691, data_time: 0.000, memory: 5751, eta: 16:22:48
+2026-03-29 21:30:59 - diffusion_denoiser - INFO - Iter [14700/100000]  lr: 4.88e-05, loss_ce: 0.0287, loss_kl: 0.0001, loss_total: 0.0004, time: 0.679, data_time: 0.000, memory: 5751, eta: 16:05:22
+2026-03-29 21:32:03 - diffusion_denoiser - INFO - Iter [14800/100000]  lr: 4.87e-05, loss_ce: 0.0869, loss_kl: 0.0008, loss_total: 0.0016, time: 0.684, data_time: 0.000, memory: 5751, eta: 16:10:53
+2026-03-29 21:33:11 - diffusion_denoiser - INFO - Iter [14900/100000]  lr: 4.87e-05, loss_ce: 0.0074, loss_kl: 0.0003, loss_total: 0.0003, time: 0.681, data_time: 0.000, memory: 5751, eta: 16:05:17
+2026-03-29 21:34:20 - diffusion_denoiser - INFO - Iter [15000/100000]  lr: 4.87e-05, loss_ce: 0.0205, loss_kl: 0.0002, loss_total: 0.0004, time: 0.681, data_time: 0.000, memory: 5751, eta: 16:05:13
+2026-03-29 21:34:22 - diffusion_denoiser - INFO - Saving checkpoint at 15000 iterations: work_dirs/d3pm_hybrid_uniform_resnet101_512x512_100k/iter_15000.pth
+2026-03-29 21:34:22 - diffusion_denoiser - INFO - --- Validation @ iter 15000 ---
+2026-03-29 21:40:58 - diffusion_denoiser - INFO - mIoU: 0.8072 | best: 0.8079 | eval_time: 395.8s
+2026-03-29 21:40:58 - diffusion_denoiser - INFO - Per-class IoU: [0.9231, 0.6914]
+2026-03-29 21:42:07 - diffusion_denoiser - INFO - Iter [15100/100000]  lr: 4.86e-05, loss_ce: 0.0002, loss_kl: 0.0000, loss_total: 0.0000, time: 0.681, data_time: 0.000, memory: 5751, eta: 16:03:15
+2026-03-29 21:43:15 - diffusion_denoiser - INFO - Iter [15200/100000]  lr: 4.86e-05, loss_ce: 0.0538, loss_kl: 0.0004, loss_total: 0.0009, time: 0.683, data_time: 0.000, memory: 5751, eta: 16:05:59
+2026-03-29 21:44:24 - diffusion_denoiser - INFO - Iter [15300/100000]  lr: 4.86e-05, loss_ce: 0.0010, loss_kl: 0.0000, loss_total: 0.0000, time: 0.689, data_time: 0.000, memory: 5751, eta: 16:12:43
+2026-03-29 21:45:32 - diffusion_denoiser - INFO - Iter [15400/100000]  lr: 4.86e-05, loss_ce: 0.0020, loss_kl: 0.0000, loss_total: 0.0000, time: 0.678, data_time: 0.000, memory: 5751, eta: 15:56:11
+2026-03-29 21:46:41 - diffusion_denoiser - INFO - Iter [15500/100000]  lr: 4.85e-05, loss_ce: 0.0002, loss_kl: 0.0000, loss_total: 0.0000, time: 0.685, data_time: 0.000, memory: 5751, eta: 16:04:39
+2026-03-29 21:47:50 - diffusion_denoiser - INFO - Iter [15600/100000]  lr: 4.85e-05, loss_ce: 0.2745, loss_kl: 0.0001, loss_total: 0.0029, time: 0.686, data_time: 0.000, memory: 5751, eta: 16:05:20
+2026-03-29 21:48:58 - diffusion_denoiser - INFO - Iter [15700/100000]  lr: 4.85e-05, loss_ce: 0.0928, loss_kl: 0.0000, loss_total: 0.0009, time: 0.685, data_time: 0.000, memory: 5751, eta: 16:02:17
+2026-03-29 21:50:02 - diffusion_denoiser - INFO - Iter [15800/100000]  lr: 4.85e-05, loss_ce: 0.0231, loss_kl: 0.0003, loss_total: 0.0005, time: 0.679, data_time: 0.000, memory: 5751, eta: 15:53:02
+2026-03-29 21:51:10 - diffusion_denoiser - INFO - Iter [15900/100000]  lr: 4.84e-05, loss_ce: 0.0066, loss_kl: 0.0003, loss_total: 0.0004, time: 0.686, data_time: 0.000, memory: 5751, eta: 16:00:58
+2026-03-29 21:52:18 - diffusion_denoiser - INFO - Iter [16000/100000]  lr: 4.84e-05, loss_ce: 0.0197, loss_kl: 0.0007, loss_total: 0.0009, time: 0.683, data_time: 0.000, memory: 5751, eta: 15:56:24
+2026-03-29 21:52:18 - diffusion_denoiser - INFO - --- Validation @ iter 16000 ---
+2026-03-29 21:58:54 - diffusion_denoiser - INFO - mIoU: 0.8071 | best: 0.8079 | eval_time: 395.7s
+2026-03-29 21:58:54 - diffusion_denoiser - INFO - Per-class IoU: [0.9231, 0.6912]
+2026-03-29 22:00:02 - diffusion_denoiser - INFO - Iter [16100/100000]  lr: 4.84e-05, loss_ce: 0.0009, loss_kl: 0.0000, loss_total: 0.0000, time: 0.691, data_time: 0.000, memory: 5751, eta: 16:06:47
+2026-03-29 22:01:11 - diffusion_denoiser - INFO - Iter [16200/100000]  lr: 4.83e-05, loss_ce: 0.0268, loss_kl: 0.0004, loss_total: 0.0007, time: 0.690, data_time: 0.000, memory: 5751, eta: 16:03:22
+2026-03-29 22:02:19 - diffusion_denoiser - INFO - Iter [16300/100000]  lr: 4.83e-05, loss_ce: 0.1924, loss_kl: 0.0000, loss_total: 0.0019, time: 0.691, data_time: 0.000, memory: 5751, eta: 16:03:15
+2026-03-29 22:03:28 - diffusion_denoiser - INFO - Iter [16400/100000]  lr: 4.83e-05, loss_ce: 0.0002, loss_kl: 0.0000, loss_total: 0.0000, time: 0.688, data_time: 0.000, memory: 5751, eta: 15:58:46
+2026-03-29 22:04:37 - diffusion_denoiser - INFO - Iter [16500/100000]  lr: 4.82e-05, loss_ce: 0.0055, loss_kl: 0.0002, loss_total: 0.0003, time: 0.686, data_time: 0.000, memory: 5751, eta: 15:54:13
+2026-03-29 22:05:45 - diffusion_denoiser - INFO - Iter [16600/100000]  lr: 4.82e-05, loss_ce: 0.5501, loss_kl: 0.0000, loss_total: 0.0055, time: 0.691, data_time: 0.000, memory: 5751, eta: 16:00:51
+2026-03-29 22:06:54 - diffusion_denoiser - INFO - Iter [16700/100000]  lr: 4.82e-05, loss_ce: 0.0237, loss_kl: 0.0000, loss_total: 0.0002, time: 0.689, data_time: 0.000, memory: 5751, eta: 15:57:12
+2026-03-29 22:08:02 - diffusion_denoiser - INFO - Iter [16800/100000]  lr: 4.82e-05, loss_ce: 0.2995, loss_kl: 0.0000, loss_total: 0.0030, time: 0.680, data_time: 0.000, memory: 5751, eta: 15:42:25
+2026-03-29 22:09:10 - diffusion_denoiser - INFO - Iter [16900/100000]  lr: 4.81e-05, loss_ce: 0.0041, loss_kl: 0.0000, loss_total: 0.0001, time: 0.679, data_time: 0.000, memory: 5751, eta: 15:40:08
+2026-03-29 22:10:19 - diffusion_denoiser - INFO - Iter [17000/100000]  lr: 4.81e-05, loss_ce: 0.2370, loss_kl: 0.0000, loss_total: 0.0024, time: 0.683, data_time: 0.000, memory: 5751, eta: 15:44:35
+2026-03-29 22:10:19 - diffusion_denoiser - INFO - --- Validation @ iter 17000 ---
+2026-03-29 22:16:55 - diffusion_denoiser - INFO - mIoU: 0.8071 | best: 0.8079 | eval_time: 396.4s
+2026-03-29 22:16:55 - diffusion_denoiser - INFO - Per-class IoU: [0.9231, 0.691 ]
+2026-03-29 22:18:03 - diffusion_denoiser - INFO - Iter [17100/100000]  lr: 4.81e-05, loss_ce: 0.0003, loss_kl: 0.0000, loss_total: 0.0000, time: 0.689, data_time: 0.000, memory: 5751, eta: 15:52:05
+2026-03-29 22:19:12 - diffusion_denoiser - INFO - Iter [17200/100000]  lr: 4.80e-05, loss_ce: 0.0198, loss_kl: 0.0002, loss_total: 0.0004, time: 0.686, data_time: 0.000, memory: 5751, eta: 15:47:02
+2026-03-29 22:20:21 - diffusion_denoiser - INFO - Iter [17300/100000]  lr: 4.80e-05, loss_ce: 0.0032, loss_kl: 0.0001, loss_total: 0.0001, time: 0.681, data_time: 0.000, memory: 5751, eta: 15:38:36
+2026-03-29 22:21:30 - diffusion_denoiser - INFO - Iter [17400/100000]  lr: 4.80e-05, loss_ce: 0.1912, loss_kl: 0.0000, loss_total: 0.0019, time: 0.685, data_time: 0.000, memory: 5751, eta: 15:42:55
+2026-03-29 22:22:38 - diffusion_denoiser - INFO - Iter [17500/100000]  lr: 4.79e-05, loss_ce: 0.0076, loss_kl: 0.0000, loss_total: 0.0001, time: 0.688, data_time: 0.000, memory: 5751, eta: 15:45:50
+2026-03-29 22:23:47 - diffusion_denoiser - INFO - Iter [17600/100000]  lr: 4.79e-05, loss_ce: 0.2264, loss_kl: 0.0001, loss_total: 0.0024, time: 0.687, data_time: 0.000, memory: 5751, eta: 15:43:43
+2026-03-29 22:24:55 - diffusion_denoiser - INFO - Iter [17700/100000]  lr: 4.79e-05, loss_ce: 0.0205, loss_kl: 0.0007, loss_total: 0.0009, time: 0.681, data_time: 0.000, memory: 5751, eta: 15:34:01
+2026-03-29 22:26:04 - diffusion_denoiser - INFO - Iter [17800/100000]  lr: 4.78e-05, loss_ce: 0.6359, loss_kl: 0.0000, loss_total: 0.0064, time: 0.689, data_time: 0.000, memory: 5751, eta: 15:43:39
+2026-03-29 22:27:13 - diffusion_denoiser - INFO - Iter [17900/100000]  lr: 4.78e-05, loss_ce: 0.0378, loss_kl: 0.0000, loss_total: 0.0004, time: 0.692, data_time: 0.000, memory: 5751, eta: 15:46:58
+2026-03-29 22:28:21 - diffusion_denoiser - INFO - Iter [18000/100000]  lr: 4.78e-05, loss_ce: 0.0212, loss_kl: 0.0002, loss_total: 0.0005, time: 0.687, data_time: 0.000, memory: 5751, eta: 15:39:19
+2026-03-29 22:28:21 - diffusion_denoiser - INFO - --- Validation @ iter 18000 ---
+2026-03-29 22:34:58 - diffusion_denoiser - INFO - mIoU: 0.8070 | best: 0.8079 | eval_time: 396.5s
+2026-03-29 22:34:58 - diffusion_denoiser - INFO - Per-class IoU: [0.9231, 0.6909]
+2026-03-29 22:36:06 - diffusion_denoiser - INFO - Iter [18100/100000]  lr: 4.77e-05, loss_ce: 0.2292, loss_kl: 0.0000, loss_total: 0.0023, time: 0.689, data_time: 0.000, memory: 5751, eta: 15:40:28
+2026-03-29 22:37:15 - diffusion_denoiser - INFO - Iter [18200/100000]  lr: 4.77e-05, loss_ce: 0.0005, loss_kl: 0.0000, loss_total: 0.0000, time: 0.679, data_time: 0.000, memory: 5751, eta: 15:25:07
+2026-03-29 22:38:24 - diffusion_denoiser - INFO - Iter [18300/100000]  lr: 4.77e-05, loss_ce: 0.0049, loss_kl: 0.0001, loss_total: 0.0002, time: 0.685, data_time: 0.000, memory: 5751, eta: 15:33:18
+2026-03-29 22:39:32 - diffusion_denoiser - INFO - Iter [18400/100000]  lr: 4.76e-05, loss_ce: 0.4530, loss_kl: 0.0001, loss_total: 0.0046, time: 0.686, data_time: 0.000, memory: 5751, eta: 15:33:32
+2026-03-29 22:40:41 - diffusion_denoiser - INFO - Iter [18500/100000]  lr: 4.76e-05, loss_ce: 0.0202, loss_kl: 0.0006, loss_total: 0.0008, time: 0.684, data_time: 0.000, memory: 5751, eta: 15:29:00
+2026-03-29 22:41:49 - diffusion_denoiser - INFO - Iter [18600/100000]  lr: 4.76e-05, loss_ce: 0.0222, loss_kl: 0.0002, loss_total: 0.0005, time: 0.681, data_time: 0.000, memory: 5751, eta: 15:24:03
+2026-03-29 22:42:58 - diffusion_denoiser - INFO - Iter [18700/100000]  lr: 4.75e-05, loss_ce: 0.4315, loss_kl: 0.0000, loss_total: 0.0043, time: 0.683, data_time: 0.000, memory: 5751, eta: 15:26:04
+2026-03-29 22:44:06 - diffusion_denoiser - INFO - Iter [18800/100000]  lr: 4.75e-05, loss_ce: 0.0001, loss_kl: 0.0000, loss_total: 0.0000, time: 0.690, data_time: 0.000, memory: 5751, eta: 15:34:18
+2026-03-29 22:45:15 - diffusion_denoiser - INFO - Iter [18900/100000]  lr: 4.75e-05, loss_ce: 0.0341, loss_kl: 0.0006, loss_total: 0.0009, time: 0.687, data_time: 0.000, memory: 5751, eta: 15:28:13
+2026-03-29 22:46:24 - diffusion_denoiser - INFO - Iter [19000/100000]  lr: 4.74e-05, loss_ce: 0.0093, loss_kl: 0.0003, loss_total: 0.0004, time: 0.694, data_time: 0.000, memory: 5751, eta: 15:37:11
+2026-03-29 22:46:24 - diffusion_denoiser - INFO - --- Validation @ iter 19000 ---
+2026-03-29 22:52:58 - diffusion_denoiser - INFO - mIoU: 0.8070 | best: 0.8079 | eval_time: 394.8s
+2026-03-29 22:52:58 - diffusion_denoiser - INFO - Per-class IoU: [0.9231, 0.6908]
+2026-03-29 22:54:07 - diffusion_denoiser - INFO - Iter [19100/100000]  lr: 4.74e-05, loss_ce: 0.0042, loss_kl: 0.0000, loss_total: 0.0001, time: 0.685, data_time: 0.000, memory: 5751, eta: 15:23:00
+2026-03-29 22:55:16 - diffusion_denoiser - INFO - Iter [19200/100000]  lr: 4.73e-05, loss_ce: 0.1329, loss_kl: 0.0002, loss_total: 0.0016, time: 0.688, data_time: 0.000, memory: 5751, eta: 15:26:11
+2026-03-29 22:56:24 - diffusion_denoiser - INFO - Iter [19300/100000]  lr: 4.73e-05, loss_ce: 0.0050, loss_kl: 0.0000, loss_total: 0.0001, time: 0.714, data_time: 0.000, memory: 5751, eta: 16:00:44
+2026-03-29 22:57:33 - diffusion_denoiser - INFO - Iter [19400/100000]  lr: 4.73e-05, loss_ce: 0.0001, loss_kl: 0.0000, loss_total: 0.0000, time: 0.688, data_time: 0.000, memory: 5751, eta: 15:24:39
+2026-03-29 22:58:41 - diffusion_denoiser - INFO - Iter [19500/100000]  lr: 4.72e-05, loss_ce: 0.0805, loss_kl: 0.0000, loss_total: 0.0008, time: 0.677, data_time: 0.000, memory: 5751, eta: 15:08:52
+2026-03-29 22:59:50 - diffusion_denoiser - INFO - Iter [19600/100000]  lr: 4.72e-05, loss_ce: 0.0002, loss_kl: 0.0000, loss_total: 0.0000, time: 0.684, data_time: 0.000, memory: 5751, eta: 15:16:51
+2026-03-29 23:00:58 - diffusion_denoiser - INFO - Iter [19700/100000]  lr: 4.72e-05, loss_ce: 0.0002, loss_kl: 0.0000, loss_total: 0.0000, time: 0.681, data_time: 0.000, memory: 5751, eta: 15:11:39
+2026-03-29 23:02:06 - diffusion_denoiser - INFO - Iter [19800/100000]  lr: 4.71e-05, loss_ce: 0.0373, loss_kl: 0.0005, loss_total: 0.0008, time: 0.670, data_time: 0.000, memory: 5751, eta: 14:55:08
+2026-03-29 23:03:15 - diffusion_denoiser - INFO - Iter [19900/100000]  lr: 4.71e-05, loss_ce: 0.0002, loss_kl: 0.0000, loss_total: 0.0000, time: 0.679, data_time: 0.000, memory: 5751, eta: 15:06:44
