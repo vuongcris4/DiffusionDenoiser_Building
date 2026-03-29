@@ -2,7 +2,6 @@ __pycache__/
 *.py[cod]
 .DS_Store
 
-# Large pretrained weights
+# Large pretrained weights & checkpoints
 pretrain/
-work_dirs/
 *.pth
