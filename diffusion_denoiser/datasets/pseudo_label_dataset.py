@@ -31,6 +31,8 @@ class PseudoLabelDiffusionDataset(Dataset):
         img_suffix (str): Image file suffix. Default: '.tif'.
         label_suffix (str): Label file suffix. Default: '.png'.
         img_norm_cfg (dict): Normalization config.
+        split_file (str | None): Optional split file relative to ``data_root``.
+            Each line should contain a filename stem or a full filename.
         is_train (bool): Whether in training mode.
         ignore_index (int): Ignore index. Default: 255.
     """
@@ -45,6 +47,7 @@ class PseudoLabelDiffusionDataset(Dataset):
                  img_suffix: str = '.tif',
                  label_suffix: str = '.png',
                  img_norm_cfg: Optional[dict] = None,
+                 split_file: Optional[str] = None,
                  is_train: bool = True,
                  ignore_index: int = 255):
         super().__init__()
@@ -56,6 +59,8 @@ class PseudoLabelDiffusionDataset(Dataset):
         self.crop_size = crop_size
         self.img_suffix = img_suffix
         self.label_suffix = label_suffix
+        self.split_file = (
+            osp.join(data_root, split_file) if split_file is not None else None)
         self.is_train = is_train
         self.ignore_index = ignore_index
 
@@ -67,9 +72,18 @@ class PseudoLabelDiffusionDataset(Dataset):
         self.std = np.array(img_norm_cfg['std'], dtype=np.float32)
 
         # Collect filenames
-        self.filenames = sorted([
-            f for f in os.listdir(self.img_dir)
-            if f.endswith(self.img_suffix)])
+        if self.split_file is not None:
+            with open(self.split_file, 'r', encoding='utf-8') as f:
+                names = [line.strip() for line in f if line.strip()]
+            self.filenames = sorted([
+                name if name.endswith(self.img_suffix)
+                else f'{name}{self.img_suffix}'
+                for name in names
+            ])
+        else:
+            self.filenames = sorted([
+                f for f in os.listdir(self.img_dir)
+                if f.endswith(self.img_suffix)])
 
     def __len__(self):
         return len(self.filenames)
