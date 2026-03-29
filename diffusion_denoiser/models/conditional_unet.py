@@ -702,6 +702,7 @@ class ConditionalUNet(nn.Module):
             for i in range(num_res_blocks):
                 block_in = ch_in if i == 0 else ch
                 level_blocks.append(ResBlock(block_in, ch, t_dim, dropout))
+                enc_channels.append(ch)
 
                 # Self-attention at specified resolutions
                 ds_factor = 2 ** level
@@ -714,7 +715,6 @@ class ConditionalUNet(nn.Module):
                         CrossAttention(ch, cond_enc_channels[level]))
 
             self.encoder_blocks.append(level_blocks)
-            enc_channels.append(ch)
 
             # Downsample (except last level)
             if level < self.num_resolutions - 1:
@@ -740,16 +740,12 @@ class ConditionalUNet(nn.Module):
 
         for level in reversed(range(self.num_resolutions)):
             ch = channels[level]
+            prev_ch = channels[level + 1] if level < self.num_resolutions - 1 else mid_ch
 
             level_blocks = nn.ModuleList()
             for i in range(num_res_blocks + 1):  # +1 for skip connection
-                # Skip connection doubles channels
                 skip_ch = enc_channels.pop()
-                block_in = ch + skip_ch if i == 0 else ch
-                if i > 0:
-                    block_in = ch
-                else:
-                    block_in = skip_ch + (channels[level + 1] if level < self.num_resolutions - 1 else mid_ch)
+                block_in = (prev_ch if i == 0 else ch) + skip_ch
 
                 level_blocks.append(ResBlock(block_in, ch, t_dim, dropout))
 
@@ -811,11 +807,11 @@ class ConditionalUNet(nn.Module):
             for block in blocks:
                 if isinstance(block, ResBlock):
                     h = block(h, t_emb)
+                    skips.append(h)
                 elif isinstance(block, CrossAttention):
                     h = block(h, cond_feats[level])
                 else:
                     h = block(h)
-            skips.append(h)
 
             if level < self.num_resolutions - 1:
                 h = self.encoder_downsamples[level](h)
@@ -832,11 +828,10 @@ class ConditionalUNet(nn.Module):
         for level_idx, level in enumerate(
                 reversed(range(self.num_resolutions))):
             blocks = self.decoder_blocks[level_idx]
-            for i, block in enumerate(blocks):
+            for block in blocks:
                 if isinstance(block, ResBlock):
-                    if i == 0:
-                        skip = skips.pop()
-                        h = torch.cat([h, skip], dim=1)
+                    skip = skips.pop()
+                    h = torch.cat([h, skip], dim=1)
                     h = block(h, t_emb)
                 elif isinstance(block, CrossAttention):
                     h = block(h, cond_feats[level])

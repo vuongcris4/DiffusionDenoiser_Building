@@ -4,11 +4,11 @@
 # Lighter-weight variant using ResNetV1c-50.  Stem + layer1 frozen,
 # layer2-4 finetuned.  Absorbing noise provides mask-state corruption.
 
-num_classes = 7
+model_num_classes = 7
 
 model = dict(
     type='DiffusionDenoiserModel',
-    num_classes=num_classes,
+    num_classes=model_num_classes,
     num_timesteps=100,
     base_channels=128,
     channel_mult=(1, 2, 4, 8),

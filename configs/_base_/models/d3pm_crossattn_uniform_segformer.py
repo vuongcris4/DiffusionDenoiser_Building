@@ -6,11 +6,11 @@
 # stages are finetuned jointly with the UNet.  Multi-scale features are
 # projected to [64, 128, 256, 512] before cross-attention injection.
 
-num_classes = 7
+model_num_classes = 7
 
 model = dict(
     type='DiffusionDenoiserModel',
-    num_classes=num_classes,
+    num_classes=model_num_classes,
     num_timesteps=100,
     base_channels=128,
     channel_mult=(1, 2, 4, 8),
