@@ -15,10 +15,14 @@ Usage:
 
 import argparse
 import copy
+import logging
 import os
 import os.path as osp
+import platform
+import shutil
 import sys
 import time
+from datetime import datetime
 
 import numpy as np
 import torch
@@ -32,6 +36,61 @@ sys.path.insert(0, osp.join(osp.dirname(__file__), '..'))
 from mmcv.utils import Config
 from diffusion_denoiser.models.diffusion_denoiser import DiffusionDenoiserModel
 from diffusion_denoiser.datasets.pseudo_label_dataset import PseudoLabelDiffusionDataset
+
+
+# ---------------------------------------------------------------------------
+# mmseg-style logger setup
+# ---------------------------------------------------------------------------
+def get_root_logger(log_file=None, log_level=logging.INFO):
+    """Get the root logger with mmseg-style formatting.
+
+    The logger prints to both console and a log file (if provided),
+    mirroring the mmseg/mmcv convention of ``<timestamp> - <name> - <level> - <msg>``.
+    """
+    logger = logging.getLogger('diffusion_denoiser')
+    # Avoid adding duplicate handlers when called multiple times
+    if logger.hasHandlers():
+        return logger
+    logger.setLevel(log_level)
+
+    fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    datefmt = '%Y-%m-%d %H:%M:%S'
+    formatter = logging.Formatter(fmt, datefmt=datefmt)
+
+    # Console handler
+    ch = logging.StreamHandler()
+    ch.setLevel(log_level)
+    ch.setFormatter(formatter)
+    logger.addHandler(ch)
+
+    # File handler
+    if log_file is not None:
+        fh = logging.FileHandler(log_file, mode='w')
+        fh.setLevel(log_level)
+        fh.setFormatter(formatter)
+        logger.addHandler(fh)
+
+    return logger
+
+
+def log_env_info(logger, cfg, args):
+    """Log environment, config, and system info (mmseg style)."""
+    dash_line = '-' * 60
+    logger.info('Environment info:')
+    logger.info(dash_line)
+    logger.info(f'sys.platform: {sys.platform}')
+    logger.info(f'Python: {sys.version}')
+    logger.info(f'PyTorch: {torch.__version__}')
+    logger.info(f'CUDA available: {torch.cuda.is_available()}')
+    if torch.cuda.is_available():
+        logger.info(f'CUDA version: {torch.version.cuda}')
+        logger.info(f'GPU: {torch.cuda.get_device_name(0)}')
+        logger.info(f'GPU count: {torch.cuda.device_count()}')
+    logger.info(f'Hostname: {platform.node()}')
+    logger.info(dash_line)
+    logger.info(f'Config file: {args.config}')
+    logger.info(f'Config:\n{cfg.pretty_text}')
+    logger.info(dash_line)
 
 
 class EMA:
@@ -137,15 +196,36 @@ def main():
     if rank == 0:
         os.makedirs(work_dir, exist_ok=True)
 
+    # -----------------------------------------------------------------------
+    # mmseg-style logging: <timestamp>.log in work_dir
+    # -----------------------------------------------------------------------
+    timestamp = time.strftime('%Y%m%d_%H%M%S', time.localtime())
+    log_file = osp.join(work_dir, f'{timestamp}.log') if rank == 0 else None
+    logger = get_root_logger(log_file=log_file)
+
+    if rank == 0:
+        log_env_info(logger, cfg, args)
+        # Dump a copy of config to work_dir (mmseg convention)
+        cfg.dump(osp.join(work_dir, osp.basename(args.config)))
+        logger.info(f'Work dir: {work_dir}')
+        logger.info(f'Log file: {log_file}')
+
     # Seed
     torch.manual_seed(args.seed)
     np.random.seed(args.seed)
+    if rank == 0:
+        logger.info(f'Set random seed to {args.seed}')
 
     # Build model
     model = build_model(cfg).to(device)
     if distributed:
         model = DDP(model, device_ids=[args.local_rank])
     raw_model = model.module if distributed else model
+
+    if rank == 0:
+        n_params = sum(p.numel() for p in model.parameters())
+        n_train = sum(p.numel() for p in model.parameters() if p.requires_grad)
+        logger.info(f'Model parameters: {n_params:,} total, {n_train:,} trainable')
 
     # EMA
     use_ema = cfg.get('use_ema', True)
@@ -186,6 +266,10 @@ def main():
         num_workers=2,
         pin_memory=True)
 
+    if rank == 0:
+        logger.info(f'Train dataset: {len(train_dataset)} samples')
+        logger.info(f'Val dataset:   {len(val_dataset)} samples')
+
     # Resume
     start_iter = 0
     if args.resume_from:
@@ -196,19 +280,27 @@ def main():
         if ema and 'ema' in ckpt:
             ema.shadow = ckpt['ema']
         if rank == 0:
-            print(f'Resumed from iter {start_iter}')
+            logger.info(f'Resumed from checkpoint: {args.resume_from} (iter {start_iter})')
 
     # Training loop
     model.train()
     data_iter = iter(train_loader)
     log_interval = cfg.get('log_interval', 100)
-    ckpt_interval = cfg.get('checkpoint_interval', 10000)
-    eval_interval = cfg.get('eval_interval', 10000)
+    ckpt_interval = cfg.get('checkpoint_interval', 5000)
+    eval_interval = cfg.get('eval_interval', 1000)
 
     if rank == 0:
-        print(f'Starting training for {max_iters} iterations...')
-        print(f'Model: {cfg.model.type}, cond: {cfg.model.cond_type}, '
-              f'noise: {cfg.model.transition_type}')
+        logger.info(f'Starting training for {max_iters} iterations ...')
+        logger.info(f'  Model:      {cfg.model.get("type", "DiffusionDenoiserModel")}')
+        logger.info(f'  Cond type:  {cfg.model.get("cond_type", "N/A")}')
+        logger.info(f'  Noise type: {cfg.model.get("transition_type", "N/A")}')
+        logger.info(f'  Log every:  {log_interval} iters')
+        logger.info(f'  Ckpt every: {ckpt_interval} iters')
+        logger.info(f'  Eval every: {eval_interval} iters')
+
+    best_miou = 0.0
+    train_start = time.time()
+    iter_time = time.time()
 
     for iteration in range(start_iter, max_iters):
         # Get batch (with cycling)
@@ -219,6 +311,8 @@ def main():
                 train_sampler.set_epoch(iteration)
             data_iter = iter(train_loader)
             batch = next(data_iter)
+
+        data_time = time.time() - iter_time
 
         satellite = batch['satellite_img'].to(device)
         clean_label = batch['clean_label'].to(device)
@@ -245,46 +339,115 @@ def main():
         if ema:
             ema.update(raw_model)
 
-        # Logging
+        batch_time = time.time() - iter_time
+
+        # ---------------------------------------------------------------
+        # Logging (mmseg style: Iter [x/y], lr, loss, time, memory)
+        # ---------------------------------------------------------------
         if rank == 0 and (iteration + 1) % log_interval == 0:
             lr = optimizer.param_groups[0]['lr']
-            loss_str = ' | '.join(
+            loss_str = ', '.join(
                 f'{k}: {v.item():.4f}' for k, v in losses.items())
-            print(f'[Iter {iteration + 1}/{max_iters}] {loss_str} | lr: {lr:.2e}')
 
-        # Checkpoint
+            eta_seconds = batch_time * (max_iters - iteration - 1)
+            eta_str = str(int(eta_seconds // 3600)).zfill(2) + ':' + \
+                      str(int(eta_seconds % 3600 // 60)).zfill(2) + ':' + \
+                      str(int(eta_seconds % 60)).zfill(2)
+
+            mem_mb = torch.cuda.max_memory_allocated() / 1024 / 1024
+
+            logger.info(
+                f'Iter [{iteration + 1}/{max_iters}]  '
+                f'lr: {lr:.2e}, '
+                f'{loss_str}, '
+                f'time: {batch_time:.3f}, data_time: {data_time:.3f}, '
+                f'memory: {mem_mb:.0f}, '
+                f'eta: {eta_str}')
+
+        # ---------------------------------------------------------------
+        # Checkpoint (mmseg style: iter_XXXX.pth + latest.pth symlink)
+        # ---------------------------------------------------------------
         if rank == 0 and (iteration + 1) % ckpt_interval == 0:
             ckpt_path = osp.join(work_dir, f'iter_{iteration + 1}.pth')
+            meta = dict(
+                iter=iteration + 1,
+                timestamp=timestamp,
+                config=args.config,
+                CLASSES=cfg.get('CLASSES', None),
+                best_miou=best_miou,
+            )
             save_dict = dict(
                 model=raw_model.state_dict(),
                 optimizer=optimizer.state_dict(),
-                iter=iteration + 1)
+                iter=iteration + 1,
+                meta=meta)
             if ema:
                 save_dict['ema'] = ema.shadow
             torch.save(save_dict, ckpt_path)
-            # Symlink latest
+
+            # Symlink latest.pth -> iter_XXXX.pth
             latest = osp.join(work_dir, 'latest.pth')
-            if osp.exists(latest):
+            if osp.islink(latest) or osp.exists(latest):
                 os.remove(latest)
             os.symlink(osp.basename(ckpt_path), latest)
-            print(f'Saved checkpoint: {ckpt_path}')
+            logger.info(f'Saving checkpoint at {iteration + 1} iterations: {ckpt_path}')
 
+        # ---------------------------------------------------------------
         # Evaluation
+        # ---------------------------------------------------------------
         if rank == 0 and (iteration + 1) % eval_interval == 0:
+            logger.info(f'--- Validation @ iter {iteration + 1} ---')
+            eval_start = time.time()
+
             # Apply EMA for evaluation
             if ema:
                 backup = {k: v.data.clone() for k, v in raw_model.named_parameters()}
                 ema.apply(raw_model)
 
             miou, per_class_iou = evaluate(raw_model, val_loader, device)
-            print(f'[Eval @ Iter {iteration + 1}] mIoU: {miou:.4f}')
-            print(f'  Per-class: {np.array2string(per_class_iou, precision=4)}')
+            eval_elapsed = time.time() - eval_start
+
+            is_best = miou > best_miou
+            if is_best:
+                best_miou = miou
+                # Save best checkpoint
+                best_path = osp.join(work_dir, 'best_mIoU.pth')
+                save_dict = dict(
+                    model=raw_model.state_dict(),
+                    iter=iteration + 1,
+                    meta=dict(
+                        iter=iteration + 1,
+                        miou=miou,
+                        per_class_iou=per_class_iou.tolist(),
+                    ))
+                if ema:
+                    save_dict['ema'] = ema.shadow
+                torch.save(save_dict, best_path)
+
+            logger.info(
+                f'mIoU: {miou:.4f} | '
+                f'best: {best_miou:.4f} | '
+                f'eval_time: {eval_elapsed:.1f}s'
+                f'{" [NEW BEST]" if is_best else ""}')
+            logger.info(
+                f'Per-class IoU: {np.array2string(per_class_iou, precision=4, separator=", ")}')
 
             if ema:
                 ema.restore(raw_model, backup)
 
+            model.train()
+
+        iter_time = time.time()
+
+    # End of training
+    total_time = time.time() - train_start
+    total_time_str = str(int(total_time // 3600)).zfill(2) + ':' + \
+                     str(int(total_time % 3600 // 60)).zfill(2) + ':' + \
+                     str(int(total_time % 60)).zfill(2)
     if rank == 0:
-        print('Training complete.')
+        logger.info(f'Training complete. Total time: {total_time_str}')
+        logger.info(f'Best mIoU: {best_miou:.4f}')
+        logger.info(f'Checkpoints and logs saved to: {work_dir}')
 
 
 if __name__ == '__main__':
