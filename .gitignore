@@ -5,3 +5,4 @@ __pycache__/
 # Large pretrained weights & checkpoints
 pretrain/
 *.pth
+data/*

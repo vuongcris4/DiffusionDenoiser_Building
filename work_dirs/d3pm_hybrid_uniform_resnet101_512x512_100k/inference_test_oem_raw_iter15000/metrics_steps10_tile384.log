@@ -1,0 +1,15 @@
+Evaluated images: 99
+Prediction dir: work_dirs/d3pm_hybrid_uniform_resnet101_512x512_100k/inference_test_oem_raw_iter15000/refined_labels_steps10_tile384
+Split: data/test_oem_raw/test_oem_raw/test1.txt
+
+Global pixel-aggregated IoU
+class, pseudo_iou, denoised_iou, delta
+0, 0.945354, 0.945864, +0.000510
+1, 0.741010, 0.745171, +0.004161
+mIoU, 0.843182, 0.845518, +0.002335
+
+Mean of per-image IoU
+class, pseudo_iou, denoised_iou, delta
+0, 0.932842, 0.933341, +0.000499
+1, 0.684464, 0.690928, +0.006464
+mIoU, 0.808653, 0.812134, +0.003481
